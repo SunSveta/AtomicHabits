@@ -21,7 +21,7 @@ class HabitCreateAPIView(CreateAPIView):
 class HabitRetrieveAPIView(RetrieveAPIView):
     queryset = Habit.objects.all()
     serializer_class = HabitSerializer
-    permission_classes = [IsAuthenticated, UserPermissions]  # Только для создателя
+    permission_classes = [IsAuthenticated, UserPermissions]
 
 
 class HabitListAPIView(ListAPIView):
@@ -29,7 +29,7 @@ class HabitListAPIView(ListAPIView):
     serializer_class = HabitSerializer
     permission_classes = [IsAuthenticated]
 
-    def get_queryset(self):                                     #Только свои привычки
+    def get_queryset(self):
         return Habit.objects.filter(user=self.request.user)
 
 
