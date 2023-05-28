@@ -1,4 +1,4 @@
-from datetime import timedelta, datetime
+from datetime import datetime, timedelta
 from celery import shared_task
 from django.conf import settings
 import requests
